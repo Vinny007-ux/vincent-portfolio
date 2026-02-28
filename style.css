@@ -1,0 +1,305 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #000;
+    color: white;
+}
+
+/* SECTIONS */
+.section {
+    min-height: 100vh;
+    padding: 120px 50px;
+}
+
+/* NAVIGATION */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    background: black;
+    padding: 15px 50px;
+    text-align: right;
+    border-bottom: 2px solid red;
+    z-index: 1000;
+}
+
+/* Nav list */
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Nav hover glow */
+nav ul li a:hover {
+    color: red;
+    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 40px red;
+}
+
+/* HAMBURGER MENU */
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    position: absolute;
+    right: 30px;
+    top: 18px;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: red;
+    margin: 5px 0;
+    transition: 0.3s ease;
+}
+
+/* HOME */
+.home-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.text {
+    max-width: 600px;
+}
+
+.profile img {
+    width: 250px;
+    border-radius: 50%;
+    border: 4px solid red;
+    box-shadow: 0 0 20px red;
+    transition: 0.4s ease;
+}
+
+.profile img:hover {
+    box-shadow: 0 0 40px red, 0 0 80px red;
+    transform: scale(1.05);
+}
+
+/* HEADINGS */
+h1 {
+    color: red;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: red;
+    margin-bottom: 10px;
+}
+
+/* SKILLS */
+.skills-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.skill-box {
+    background: #111;
+    padding: 20px;
+    border: 2px solid red;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 280px;
+    transition: 0.3s ease;
+}
+
+.skill-box:hover {
+    box-shadow: 0 0 20px red;
+    transform: translateY(-5px);
+}
+
+.skill-box ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.skill-box li {
+    margin-bottom: 8px;
+}
+
+/* CERTIFICATIONS */
+.cert-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.cert-card {
+    background: #111;
+    padding: 20px;
+    border: 2px solid red;
+    border-radius: 10px;
+    width: 300px;
+    transition: 0.3s ease;
+}
+
+.cert-card:hover {
+    box-shadow: 0 0 25px red;
+    transform: translateY(-5px);
+}
+
+.cert-card p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* PDF BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    color: white;
+    border: 2px solid red;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: red;
+    box-shadow: 0 0 15px red, 0 0 30px red;
+    transform: scale(1.05);
+}
+
+/* CONTACT */
+#contact p {
+    margin-bottom: 10px;
+}
+
+/* SOCIAL BUTTONS */
+.social-buttons {
+    margin-top: 20px;
+}
+
+.social {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    margin-right: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    color: white;
+    border: 2px solid red;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.social:hover {
+    background: red;
+    box-shadow: 0 0 15px red, 0 0 30px red;
+    transform: scale(1.1);
+}
+
+.github:hover { background: #333; }
+.facebook:hover { background: #1877F2; }
+.instagram:hover { 
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+/* ANIMATION */
+.fade-in {
+    animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+
+    nav {
+        text-align: left;
+        padding: 15px 20px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    nav ul {
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.4s ease;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 15px 0;
+    }
+
+    #menu-toggle:checked ~ ul {
+        max-height: 400px;
+    }
+
+    #home {
+        padding-top: 150px;
+    }
+
+    .home-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile img {
+        margin-top: 30px;
+        width: 200px;
+    }
+
+    .skills-container,
+    .cert-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cert-card {
+        width: 90%;
+    }
+
+    .social-buttons {
+        text-align: center;
+    }
+}
